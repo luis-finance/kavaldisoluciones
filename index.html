@@ -1,499 +1,389 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kavaldi Soluciones S.A.C. — Estudio Contable y Asesoría Tributaria para micro y mediana empresa en Lima. Contáctanos por WhatsApp." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Kavaldi Soluciones S.A.C. — Más de 20 años de experiencia en contabilidad y asesoría tributaria para micro y mediana empresa en Lima, Perú."/>
   <title>Kavaldi Soluciones | Estudio Contable Lima</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #1a1a2e;
-      background: #fff;
-      line-height: 1.6;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:#1a1a2e;background:#fff;line-height:1.65;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    :root{
+      --navy:#0d2b55;--gold:#b8842e;--gold-lt:#fdf3e3;
+      --green:#25d366;--muted:#6b7280;--light:#f8f9fb;
+      --border:#e8ecf0;--radius:16px;
+      --shadow-sm:0 2px 12px rgba(13,43,85,.07);
+      --shadow-md:0 8px 32px rgba(13,43,85,.11);
+      --shadow-lg:0 20px 60px rgba(13,43,85,.13);
     }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
+    .reveal-left.visible{opacity:1;transform:none}
+    .reveal-right{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
+    .reveal-right.visible{opacity:1;transform:none}
 
-    /* ===== VARIABLES ===== */
-    :root {
-      --navy:    #0d2b55;
-      --gold:    #c8973a;
-      --gold-lt: #f5e6c8;
-      --teal:    #1a7f75;
-      --light:   #f7f9fc;
-      --muted:   #6b7280;
-      --radius:  12px;
-      --shadow:  0 4px 24px rgba(13,43,85,.10);
-    }
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+    nav.scrolled{box-shadow:var(--shadow-sm)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:42px;height:42px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:#fff}
+    .brand-mark em{color:#f0c060;font-style:normal}
+    .brand-info strong{display:block;font-size:.95rem;color:var(--navy);font-weight:700}
+    .brand-info small{font-size:.7rem;color:var(--muted)}
+    .nav-right{display:flex;align-items:center;gap:10px}
+    .nav-link{font-size:.85rem;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:8px;transition:color .2s,background .2s}
+    .nav-link:hover{color:var(--navy);background:var(--light)}
+    .nav-wa{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:700;transition:transform .15s,box-shadow .15s}
+    .nav-wa:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.4)}
+    @media(max-width:640px){.nav-link{display:none}.nav-wa-t{display:none}}
 
-    /* ===== NAV ===== */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(13,43,85,.08);
-      padding: 0 5vw;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 68px;
-    }
-    .nav-brand {
-      display: flex; align-items: center; gap: 10px;
-    }
-    .nav-logo-icon {
-      width: 38px; height: 38px;
-      background: var(--navy);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gold); font-weight: 700; font-size: 1.1rem;
-      letter-spacing: -1px;
-    }
-    .nav-brand-text { line-height: 1.1; }
-    .nav-brand-text strong { display: block; font-size: .95rem; color: var(--navy); font-weight: 700; }
-    .nav-brand-text span   { font-size: .72rem; color: var(--muted); }
-    .nav-cta {
-      background: #25d366;
-      color: #fff;
-      border: none; cursor: pointer;
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-size: .88rem; font-weight: 600;
-      display: flex; align-items: center; gap: 7px;
-      transition: transform .15s, box-shadow .15s;
-      text-decoration: none;
-    }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37,211,102,.35); }
-    .nav-cta svg { flex-shrink: 0; }
+    /* HERO */
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:120px 6vw 80px;gap:60px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;padding-top:110px}}
+    .hero-pill{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border);border-radius:999px;padding:6px 14px;font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:20px}
+    .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:blink 2s infinite;flex-shrink:0}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.1;color:var(--navy);margin-bottom:20px;letter-spacing:-.02em}
+    .hero h1 em{color:var(--gold);font-style:normal}
+    .hero-sub{font-size:1.05rem;color:var(--muted);max-width:480px;margin-bottom:36px;line-height:1.75}
+    @media(max-width:900px){.hero-sub{margin:0 auto 36px}}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+    @media(max-width:900px){.hero-ctas{justify-content:center}}
+    .btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;padding:15px 28px;border-radius:999px;font-size:.95rem;font-weight:700;transition:transform .15s,box-shadow .15s}
+    .btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.4)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:7px;background:var(--light);color:var(--navy);padding:15px 24px;border-radius:999px;font-size:.95rem;font-weight:600;border:1.5px solid var(--border);transition:background .2s}
+    .btn-ghost:hover{background:#eef2f8}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+    @media(max-width:900px){.hero-badges{justify-content:center}}
+    .badge{display:flex;align-items:center;gap:7px;background:var(--light);border:1.5px solid var(--border);border-radius:999px;padding:7px 14px;font-size:.75rem;font-weight:600;color:var(--navy)}
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--navy) 0%, #1a4480 60%, #1a7f75 100%);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 5vw 80px;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(200,151,58,.2);
-      border: 1px solid rgba(200,151,58,.4);
-      color: #f5c97a;
-      padding: 6px 16px; border-radius: 999px;
-      font-size: .78rem; font-weight: 600; letter-spacing: .05em;
-      text-transform: uppercase; margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      color: #fff;
-      max-width: 760px;
-      margin-bottom: 20px;
-      line-height: 1.15;
-    }
-    .hero h1 em { color: var(--gold); font-style: normal; }
-    .hero p {
-      font-size: clamp(.95rem, 2vw, 1.15rem);
-      color: rgba(255,255,255,.75);
-      max-width: 560px;
-      margin-bottom: 40px;
-    }
-    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
-    .btn-primary {
-      background: #25d366;
-      color: #fff;
-      padding: 16px 32px; border-radius: 999px;
-      font-size: 1rem; font-weight: 700;
-      display: inline-flex; align-items: center; gap: 10px;
-      transition: transform .15s, box-shadow .15s;
-      text-decoration: none;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37,211,102,.4); }
-    .btn-outline {
-      background: transparent;
-      color: #fff;
-      border: 2px solid rgba(255,255,255,.4);
-      padding: 14px 30px; border-radius: 999px;
-      font-size: 1rem; font-weight: 600;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: background .2s, border-color .2s;
-      text-decoration: none;
-    }
-    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
-    .hero-stats {
-      display: flex; gap: 40px; flex-wrap: wrap; justify-content: center;
-      margin-top: 60px;
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat strong { display: block; font-size: 2rem; font-weight: 700; color: #fff; }
-    .hero-stat span   { font-size: .8rem; color: rgba(255,255,255,.6); letter-spacing: .04em; }
+    /* HERO CARD */
+    .hero-visual{position:relative}
+    .hero-card{background:#fff;border-radius:24px;border:1.5px solid var(--border);box-shadow:var(--shadow-lg);padding:36px;position:relative;overflow:hidden}
+    .hero-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,rgba(184,132,46,.12),rgba(13,43,85,.08))}
+    .card-header{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+    .card-logo{width:52px;height:52px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff}
+    .card-logo em{color:#f0c060;font-style:normal}
+    .card-title strong{display:block;font-size:1rem;color:var(--navy);font-weight:700}
+    .card-title small{font-size:.75rem;color:var(--muted)}
+    .card-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+    .stat-box{background:var(--light);border-radius:12px;padding:16px;text-align:center}
+    .stat-box strong{display:block;font-size:1.6rem;font-weight:800;color:var(--navy);font-family:'Cormorant Garamond',serif}
+    .stat-box span{font-size:.72rem;color:var(--muted);font-weight:500}
+    .card-services{display:flex;flex-direction:column;gap:10px}
+    .cs-item{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--navy);font-weight:500}
+    .cs-check{width:22px;height:22px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .floating-tag{position:absolute;bottom:-18px;right:24px;background:var(--navy);color:#fff;border-radius:12px;padding:12px 18px;font-size:.8rem;font-weight:600;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:8px}
+    @media(max-width:900px){.hero-visual{display:none}}
 
-    /* ===== SECTION WRAPPER ===== */
-    section { padding: 90px 5vw; }
-    .section-label {
-      display: inline-block;
-      background: var(--gold-lt); color: var(--gold);
-      padding: 4px 14px; border-radius: 999px;
-      font-size: .75rem; font-weight: 700; letter-spacing: .07em;
-      text-transform: uppercase; margin-bottom: 14px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--navy); margin-bottom: 14px;
-    }
-    .section-sub { color: var(--muted); max-width: 560px; font-size: 1rem; }
+    /* TRUST BAND */
+    .trust-band{background:var(--navy);padding:28px 6vw;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:40px}
+    .trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.8);font-size:.85rem;font-weight:500}
+    .trust-divider{width:1px;height:28px;background:rgba(255,255,255,.2)}
+    @media(max-width:640px){.trust-divider{display:none}}
 
-    /* ===== SERVICES ===== */
-    #servicios { background: var(--light); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px; margin-top: 50px;
-    }
-    .service-card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      box-shadow: var(--shadow);
-      transition: transform .2s, box-shadow .2s;
-      border: 1px solid rgba(13,43,85,.06);
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(13,43,85,.14); }
-    .service-icon {
-      width: 52px; height: 52px;
-      background: var(--gold-lt);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .service-card p  { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+    /* SECTIONS */
+    .section{padding:96px 6vw}
+    .section-alt{background:var(--light)}
+    .section-label{display:inline-flex;align-items:center;gap:6px;background:var(--gold-lt);color:var(--gold);padding:5px 14px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;border:1px solid rgba(184,132,46,.2)}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--navy);margin-bottom:14px;letter-spacing:-.02em;line-height:1.15}
+    .section-sub{color:var(--muted);max-width:520px;font-size:1rem;line-height:1.75}
 
-    /* ===== WHY ===== */
-    #nosotros { background: #fff; }
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-      margin-top: 50px;
-    }
-    @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; gap: 40px; } }
-    .why-visual {
-      background: linear-gradient(135deg, var(--navy), var(--teal));
-      border-radius: 20px;
-      padding: 48px 36px;
-      color: #fff;
-      position: relative; overflow: hidden;
-    }
-    .why-visual::after {
-      content: '📊';
-      position: absolute; right: -10px; bottom: -10px;
-      font-size: 8rem; opacity: .07;
-    }
-    .why-visual h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 16px; }
-    .why-visual p { font-size: .92rem; opacity: .82; line-height: 1.7; }
-    .why-checks { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
-    .why-check { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; }
-    .why-check-icon { width: 20px; height: 20px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-    .why-checks-list { display: flex; flex-direction: column; gap: 18px; }
-    .why-item { display: flex; align-items: flex-start; gap: 16px; }
-    .why-item-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      background: var(--gold-lt); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-    }
-    .why-item h4 { font-size: .97rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .why-item p  { font-size: .88rem; color: var(--muted); }
+    /* SERVICES */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:52px}
+    .svc{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:32px 28px;transition:transform .22s,box-shadow .22s;position:relative;overflow:hidden}
+    .svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+    .svc:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+    .svc:hover::after{transform:scaleX(1)}
+    .svc-icon{width:54px;height:54px;border-radius:14px;background:var(--gold-lt);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px;border:1.5px solid rgba(184,132,46,.15)}
+    .svc h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+    .svc p{font-size:.88rem;color:var(--muted);line-height:1.7}
 
-    /* ===== CTA ===== */
-    #contacto {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
-      text-align: center;
-    }
-    #contacto .section-label { background: rgba(200,151,58,.25); color: #f5c97a; }
-    #contacto .section-title { color: #fff; }
-    #contacto .section-sub  { color: rgba(255,255,255,.75); margin: 0 auto 36px; }
-    .cta-info {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 32px;
-      margin-top: 50px;
-    }
-    .cta-info-item {
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(255,255,255,.85); font-size: .9rem;
-    }
-    .cta-info-item span { font-size: 1.5rem; }
+    /* STEPS */
+    .steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;margin-top:52px;position:relative}
+    .steps::before{content:'';position:absolute;top:34px;left:calc(10% + 34px);right:calc(10% + 34px);height:2px;background:linear-gradient(90deg,var(--gold),rgba(184,132,46,.15))}
+    @media(max-width:720px){.steps::before{display:none}.steps{gap:16px}}
+    .step{text-align:center;padding:0 20px}
+    .step-num{width:68px;height:68px;border-radius:50%;background:#fff;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin:0 auto 20px;position:relative;z-index:1;box-shadow:var(--shadow-sm)}
+    .step h4{font-size:.93rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .step p{font-size:.82rem;color:var(--muted);line-height:1.6}
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0a1f42;
-      color: rgba(255,255,255,.5);
-      text-align: center; padding: 28px 5vw;
-      font-size: .82rem; line-height: 1.8;
-    }
-    footer a { color: rgba(255,255,255,.7); }
-    footer a:hover { color: var(--gold); }
-    footer strong { color: rgba(255,255,255,.85); }
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:52px}
+    @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}}
+    .about-bg{border-radius:24px;background:linear-gradient(135deg,var(--navy) 0%,#1a4a8a 100%);padding:48px 40px;color:#fff;position:relative}
+    .about-bg h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:14px}
+    .about-bg p{font-size:.9rem;opacity:.8;line-height:1.75;margin-bottom:28px}
+    .about-items{display:flex;flex-direction:column;gap:14px}
+    .about-item{display:flex;align-items:flex-start;gap:12px;font-size:.87rem;opacity:.88}
+    .ab-check{width:22px;height:22px;border-radius:50%;background:rgba(240,192,96,.2);border:1px solid rgba(240,192,96,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .about-float{position:absolute;bottom:-24px;right:-20px;background:#fff;border-radius:16px;box-shadow:var(--shadow-md);padding:16px 20px;display:flex;align-items:center;gap:12px;border:1.5px solid var(--border)}
+    .af-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy);line-height:1}
+    .af-txt{font-size:.75rem;color:var(--muted);font-weight:500;line-height:1.4}
+    .about-list{display:flex;flex-direction:column;gap:22px}
+    .al-item{display:flex;align-items:flex-start;gap:18px}
+    .al-icon{width:48px;height:48px;flex-shrink:0;background:var(--gold-lt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;border:1.5px solid rgba(184,132,46,.15)}
+    .al-item h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:5px}
+    .al-item p{font-size:.87rem;color:var(--muted);line-height:1.65}
 
-    /* ===== WHATSAPP FLOAT ===== */
-    .wa-float {
-      position: fixed; bottom: 28px; right: 28px;
-      z-index: 999;
-      width: 60px; height: 60px;
-      background: #25d366;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 24px rgba(37,211,102,.55);
-      transition: transform .2s, box-shadow .2s;
-      cursor: pointer;
-    }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,.6); }
-    .wa-float-pulse {
-      position: absolute;
-      width: 100%; height: 100%;
-      border-radius: 50%;
-      background: #25d366;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%   { transform: scale(1); opacity: .6; }
-      70%  { transform: scale(1.5); opacity: 0; }
-      100% { transform: scale(1.5); opacity: 0; }
-    }
+    /* TESTIMONIALS */
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:52px}
+    .testi{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:28px;transition:box-shadow .22s}
+    .testi:hover{box-shadow:var(--shadow-md)}
+    .stars{color:#f59e0b;font-size:1rem;margin-bottom:16px;letter-spacing:2px}
+    .testi blockquote{font-size:.9rem;color:#374151;line-height:1.75;margin-bottom:20px;font-style:italic}
+    .testi-author{display:flex;align-items:center;gap:12px}
+    .avatar{width:40px;height:40px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff;flex-shrink:0}
+    .testi-name strong{display:block;font-size:.88rem;color:var(--navy);font-weight:700}
+    .testi-name small{font-size:.75rem;color:var(--muted)}
 
-    /* ===== RESPONSIVE NAV ===== */
-    @media (max-width: 480px) {
-      .nav-cta .nav-cta-text { display: none; }
-      .hero-stats { gap: 24px; }
-    }
+    /* CTA */
+    .cta-wrap{border-radius:24px;background:linear-gradient(135deg,var(--navy) 0%,#1a5080 100%);padding:72px 48px;text-align:center;position:relative;overflow:hidden}
+    .cta-wrap::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(240,192,96,.07)}
+    .cta-wrap h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:16px;letter-spacing:-.02em}
+    .cta-wrap p{color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 36px;line-height:1.75}
+    .cta-info-row{display:flex;justify-content:center;flex-wrap:wrap;gap:36px;margin-top:48px}
+    .ci{display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.75);font-size:.85rem}
+    .ci-icon{font-size:1.6rem}
+    .ci strong{color:#fff;font-size:.95rem}
+
+    /* FOOTER */
+    footer{background:#08193a;padding:48px 6vw 28px}
+    .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+    @media(max-width:720px){.footer-top{grid-template-columns:1fr;gap:32px}}
+    .footer-brand strong{display:block;font-size:1rem;color:#fff;margin-bottom:6px}
+    .footer-brand p{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.75}
+    .footer-col h5{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+    .footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.55);margin-bottom:9px;transition:color .2s}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-bottom p{font-size:.77rem;color:rgba(255,255,255,.3)}
+    .footer-wa{display:flex;align-items:center;gap:7px;background:var(--green);color:#fff;padding:9px 18px;border-radius:999px;font-size:.82rem;font-weight:700}
+
+    /* WA FLOAT */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:62px;height:62px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.55);transition:transform .2s}
+    .wa-float:hover{transform:scale(1.08)}
+    .wa-pulse{position:absolute;width:100%;height:100%;border-radius:50%;background:var(--green);opacity:.6;animation:ripple 2s infinite}
+    @keyframes ripple{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.7);opacity:0}}
+    .wa-tooltip{position:absolute;right:72px;white-space:nowrap;background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:8px;font-size:.8rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s}
+    .wa-float:hover .wa-tooltip{opacity:1}
   </style>
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav>
-    <div class="nav-brand">
-      <div class="nav-logo-icon">KV</div>
-      <div class="nav-brand-text">
-        <strong>Kavaldi Soluciones</strong>
-        <span>Estudio Contable · Lima</span>
-      </div>
+<nav id="nav">
+  <div class="brand">
+    <div class="brand-mark">K<em>V</em></div>
+    <div class="brand-info">
+      <strong>Kavaldi Soluciones</strong>
+      <small>Estudio Contable · Lima, Perú</small>
     </div>
-    <a class="nav-cta" href="https://wa.me/51915299915?text=Hola,%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20contable" target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      <span class="nav-cta-text">WhatsApp</span>
+  </div>
+  <div class="nav-right">
+    <a class="nav-link" href="#servicios">Servicios</a>
+    <a class="nav-link" href="#nosotros">Nosotros</a>
+    <a class="nav-link" href="#contacto">Contacto</a>
+    <a class="nav-wa" href="https://wa.me/51915299915?text=Hola!%20Quisiera%20una%20consulta%20contable" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="nav-wa-t">WhatsApp</span>
     </a>
-  </nav>
+  </div>
+</nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="inicio">
-    <div class="hero-badge">✦ Kavaldi Soluciones S.A.C.</div>
-    <h1>Tu <em>tranquilidad fiscal</em><br>empieza aquí</h1>
-    <p>Asesoría contable y tributaria especializada para micro y mediana empresa en Lima. Te ayudamos a crecer con orden y cumplimiento.</p>
-    <div class="hero-btns">
-      <a class="btn-primary"
-         href="https://wa.me/51915299915?text=Hola,%20quiero%20consultar%20sobre%20sus%20servicios%20contables"
-         target="_blank" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
+<section class="hero" id="inicio">
+  <div>
+    <div class="hero-pill reveal"><div class="dot"></div>Estudio Contable en Lima, Perú</div>
+    <h1 class="reveal">Tu empresa merece<br>una <em>contabilidad</em><br>impecable</h1>
+    <p class="hero-sub reveal">Más de 20 años asesorando a micro y medianas empresas en Lima. Declaraciones, planilla, tributación SUNAT y todo lo que necesitas, sin complicaciones.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn-wa" href="https://wa.me/51915299915?text=Hola!%20Quisiera%20consultar%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Consulta gratis por WhatsApp
       </a>
-      <a class="btn-outline" href="#servicios">Ver servicios ↓</a>
+      <a class="btn-ghost" href="#servicios">Ver servicios →</a>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>+5</strong><span>Años de experiencia</span></div>
-      <div class="hero-stat"><strong>MYPE</strong><span>Especialistas</span></div>
-      <div class="hero-stat"><strong>SUNAT</strong><span>Al día siempre</span></div>
-      <div class="hero-stat"><strong>Lima</strong><span>Cobertura nacional</span></div>
+    <div class="hero-badges reveal">
+      <div class="badge">🏛️ SUNAT al día</div>
+      <div class="badge">✅ +20 años de experiencia</div>
+      <div class="badge">🔒 Confidencialidad total</div>
     </div>
-  </section>
-
-  <!-- ===== SERVICIOS ===== -->
-  <section id="servicios">
-    <div class="section-label">Nuestros Servicios</div>
-    <h2 class="section-title">Todo lo que tu empresa necesita</h2>
-    <p class="section-sub">Soluciones contables y tributarias integrales para que tú te concentres en crecer.</p>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <div class="service-icon">📋</div>
-        <h3>Contabilidad General</h3>
-        <p>Registro ordenado de tus operaciones, estados financieros y libros contables según la normativa peruana.</p>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card reveal-right">
+      <div class="card-header">
+        <div class="card-logo">K<em>V</em></div>
+        <div class="card-title"><strong>Kavaldi Soluciones</strong><small>Estudio Contable Certificado · Lima</small></div>
       </div>
-
-      <div class="service-card">
-        <div class="service-icon">🏛️</div>
-        <h3>Asesoría Tributaria</h3>
-        <p>Planeamiento fiscal, declaraciones mensuales y anuales, y acompañamiento ante SUNAT para evitar multas.</p>
+      <div class="card-stats">
+        <div class="stat-box"><strong>+20</strong><span>Años de experiencia</span></div>
+        <div class="stat-box"><strong>100%</strong><span>Clientes satisfechos</span></div>
+        <div class="stat-box"><strong>MYPE</strong><span>Especialistas</span></div>
+        <div class="stat-box"><strong>Lima</strong><span>Cobertura nacional</span></div>
       </div>
-
-      <div class="service-card">
-        <div class="service-icon">🏢</div>
-        <h3>Constitución de Empresas</h3>
-        <p>Te ayudamos a formalizar tu negocio: RUC, régimen tributario ideal y todos los trámites desde cero.</p>
+      <div class="card-services">
+        <div class="cs-item"><div class="cs-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Declaraciones SUNAT mensuales y anuales</div>
+        <div class="cs-item"><div class="cs-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Planilla, CTS y gratificaciones</div>
+        <div class="cs-item"><div class="cs-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Constitución y formalización de empresas</div>
+        <div class="cs-item"><div class="cs-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Asesoría tributaria personalizada</div>
       </div>
-
-      <div class="service-card">
-        <div class="service-icon">💼</div>
-        <h3>Planilla de Sueldos</h3>
-        <p>Cálculo de remuneraciones, AFP/ONP, CTS, gratificaciones y presentación de PDT 601 puntual.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📊</div>
-        <h3>Estados Financieros</h3>
-        <p>Balance general, estado de resultados y análisis financiero para decisiones estratégicas de tu negocio.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🔍</div>
-        <h3>Regularización Tributaria</h3>
-        <p>Si tienes deudas o atrasos con SUNAT, te ayudamos a regularizar y acogerte a fraccionamientos.</p>
-      </div>
-
+      <div class="floating-tag">📱 Escríbenos ahora · 915 299 915</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== POR QUÉ NOSOTROS ===== -->
-  <section id="nosotros">
-    <div class="section-label">¿Por qué elegirnos?</div>
-    <h2 class="section-title">Comprometidas con tu éxito</h2>
-    <p class="section-sub">Somos un equipo de contadoras dedicadas a las micro y medianas empresas limeñas.</p>
-    <div class="why-grid">
-      <div class="why-visual">
+<div class="trust-band">
+  <div class="trust-item">🏛️ Registrados en SUNAT</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">📋 Contadores Públicos Colegiados</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">🤝 Más de 20 años en el mercado</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">🇵🇪 Especialistas en normativa peruana</div>
+</div>
+
+<section class="section section-alt" id="servicios">
+  <div class="section-label reveal">✦ Nuestros Servicios</div>
+  <h2 class="section-title reveal">Todo lo que tu empresa necesita,<br>en un solo lugar</h2>
+  <p class="section-sub reveal">Soluciones integrales para que tú te concentres en crecer y nosotras en mantener tu contabilidad impecable.</p>
+  <div class="services-grid">
+    <div class="svc reveal"><div class="svc-icon">📋</div><h3>Contabilidad General</h3><p>Registro ordenado de tus operaciones, estados financieros y libros contables según la normativa peruana vigente.</p></div>
+    <div class="svc reveal"><div class="svc-icon">🏛️</div><h3>Asesoría Tributaria SUNAT</h3><p>Planeamiento fiscal, declaraciones mensuales (PDT 621) y anuales, y acompañamiento ante fiscalizaciones de SUNAT.</p></div>
+    <div class="svc reveal"><div class="svc-icon">🏢</div><h3>Constitución de Empresas</h3><p>Formaliza tu negocio: RUC, elección del régimen ideal (NRUS, RER, RMT o General) y todos los trámites desde cero.</p></div>
+    <div class="svc reveal"><div class="svc-icon">💼</div><h3>Planilla de Sueldos</h3><p>Cálculo de remuneraciones, AFP/ONP, CTS, gratificaciones, vacaciones y presentación de PDT 601 puntual.</p></div>
+    <div class="svc reveal"><div class="svc-icon">📊</div><h3>Estados Financieros</h3><p>Balance general, estado de resultados y flujo de caja para que tomes decisiones estratégicas con información real.</p></div>
+    <div class="svc reveal"><div class="svc-icon">🔍</div><h3>Regularización Tributaria</h3><p>¿Tienes deudas con SUNAT? Te ayudamos a regularizar, acogerte a fraccionamientos y evitar embargos.</p></div>
+  </div>
+</section>
+
+<section class="section" id="proceso">
+  <div class="section-label reveal">✦ ¿Cómo trabajamos?</div>
+  <h2 class="section-title reveal">Simple, rápido y sin complicaciones</h2>
+  <p class="section-sub reveal">En 4 pasos tienes tu contabilidad en orden.</p>
+  <div class="steps">
+    <div class="step reveal"><div class="step-num">1</div><h4>Contáctanos</h4><p>Escríbenos por WhatsApp y cuéntanos sobre tu empresa. Sin compromisos.</p></div>
+    <div class="step reveal"><div class="step-num">2</div><h4>Diagnóstico gratuito</h4><p>Revisamos tu situación contable y tributaria actual sin costo alguno.</p></div>
+    <div class="step reveal"><div class="step-num">3</div><h4>Propuesta a medida</h4><p>Te presentamos un plan personalizado con precios claros y justos.</p></div>
+    <div class="step reveal"><div class="step-num">4</div><h4>¡Empezamos!</h4><p>Nos encargamos de todo. Tú te enfocas en hacer crecer tu negocio.</p></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="nosotros">
+  <div class="section-label reveal">✦ ¿Por qué elegirnos?</div>
+  <h2 class="section-title reveal">Más de 20 años cuidando<br>la salud financiera de tu empresa</h2>
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-bg">
         <h3>Kavaldi Soluciones S.A.C.</h3>
-        <p>Brindamos asesoría personalizada, honesta y eficiente. Entendemos que cada empresa es única y merece un servicio a su medida.</p>
-        <div class="why-checks">
-          <div class="why-check">
-            <div class="why-check-icon">
-              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Atención personalizada 100%
-          </div>
-          <div class="why-check">
-            <div class="why-check-icon">
-              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Respuesta rápida por WhatsApp
-          </div>
-          <div class="why-check">
-            <div class="why-check-icon">
-              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Precios accesibles para MYPE
-          </div>
-          <div class="why-check">
-            <div class="why-check-icon">
-              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Al día con normativa SUNAT
-          </div>
+        <p>Somos un equipo de contadoras públicas colegiadas con más de 20 años de experiencia asesorando a empresarios limeños. Conocemos la realidad de las MYPE y trabajamos con compromiso, transparencia y resultados.</p>
+        <div class="about-items">
+          <div class="about-item"><div class="ab-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f0c060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contadoras Públicas Colegiadas (CPC)</div>
+          <div class="about-item"><div class="ab-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f0c060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Especialistas en MYPE y mediana empresa</div>
+          <div class="about-item"><div class="ab-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f0c060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Atención personalizada y trato directo</div>
+          <div class="about-item"><div class="ab-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#f0c060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Precios accesibles sin letra pequeña</div>
         </div>
       </div>
-      <div class="why-checks-list">
-        <div class="why-item">
-          <div class="why-item-icon">⚡</div>
-          <div>
-            <h4>Respuesta inmediata</h4>
-            <p>Escríbenos por WhatsApp y te respondemos a la brevedad. Sin colas, sin esperas innecesarias.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-item-icon">🎯</div>
-          <div>
-            <h4>Especialistas en MYPE</h4>
-            <p>Conocemos el RUS, RER y Régimen General a fondo para elegir lo que más conviene a tu negocio.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-item-icon">🔒</div>
-          <div>
-            <h4>Confidencialidad total</h4>
-            <p>Tu información financiera y tributaria está protegida. Manejamos tus datos con absoluta reserva.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-item-icon">🗓️</div>
-          <div>
-            <h4>Cumplimiento puntual</h4>
-            <p>Declaraciones presentadas a tiempo, siempre. Evita multas e intereses innecesarios con nosotros.</p>
-          </div>
-        </div>
+      <div class="about-float">
+        <div class="af-num">+20</div>
+        <div class="af-txt">años de<br>experiencia<br>en Lima</div>
       </div>
     </div>
-  </section>
+    <div class="about-list reveal-right">
+      <div class="al-item"><div class="al-icon">⚡</div><div><h4>Respuesta en minutos</h4><p>Escríbenos por WhatsApp y te respondemos de inmediato. Sin esperar, sin intermediarios.</p></div></div>
+      <div class="al-item"><div class="al-icon">🎯</div><div><h4>Régimen tributario ideal</h4><p>Analizamos tu negocio y te recomendamos el régimen que más te conviene: NRUS, RER, RMT o General.</p></div></div>
+      <div class="al-item"><div class="al-icon">🔒</div><div><h4>Confidencialidad garantizada</h4><p>Tu información financiera y tributaria está protegida. Trabajamos con absoluta reserva profesional.</p></div></div>
+      <div class="al-item"><div class="al-icon">🗓️</div><div><h4>Siempre puntual con SUNAT</h4><p>Declaraciones presentadas a tiempo, sin excusas. Evita multas e intereses innecesarios con nosotras.</p></div></div>
+      <div class="al-item"><div class="al-icon">💰</div><div><h4>Ahorro tributario legal</h4><p>Planeamos estratégicamente para que pagues solo lo justo. Aprovechamos todos los beneficios tributarios vigentes.</p></div></div>
+    </div>
+  </div>
+</section>
 
-  <!-- ===== CTA CONTACTO ===== -->
-  <section id="contacto">
-    <div class="section-label">Contáctanos</div>
-    <h2 class="section-title">¿Lista/o para ordenar tu contabilidad?</h2>
-    <p class="section-sub">Da el primer paso hoy. Una consulta gratuita puede ahorrarte mucho dinero y preocupaciones.</p>
+<section class="section" id="testimonios">
+  <div class="section-label reveal">✦ Testimonios</div>
+  <h2 class="section-title reveal">Lo que dicen nuestros clientes</h2>
+  <p class="section-sub reveal">Empresarios reales que confiaron en Kavaldi Soluciones.</p>
+  <div class="testi-grid">
+    <div class="testi reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Llevaba años con mis declaraciones atrasadas y con miedo a SUNAT. Kavaldi lo regularizó todo en semanas y ahora duermo tranquilo. 100% recomendadas."</blockquote>
+      <div class="testi-author"><div class="avatar">JM</div><div class="testi-name"><strong>Jorge M.</strong><small>Ferretería · San Juan de Lurigancho</small></div></div>
+    </div>
+    <div class="testi reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Me ayudaron a constituir mi empresa y elegir el régimen correcto desde el inicio. Ahorro en impuestos cada mes. El servicio es rápido y muy personalizado."</blockquote>
+      <div class="testi-author"><div class="avatar">LC</div><div class="testi-name"><strong>Lucía C.</strong><small>Emprendedora · Surco</small></div></div>
+    </div>
+    <div class="testi reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Tengo tres locales y antes era un caos con la planilla. Ahora Kavaldi lo maneja todo. Responden por WhatsApp al toque y los precios son muy razonables."</blockquote>
+      <div class="testi-author"><div class="avatar">RP</div><div class="testi-name"><strong>Roberto P.</strong><small>Restaurantes · Miraflores</small></div></div>
+    </div>
+  </div>
+</section>
 
-    <a class="btn-primary" style="margin:0 auto;font-size:1.05rem;padding:18px 40px;"
-       href="https://wa.me/51915299915?text=Hola!%20Vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20sobre%20sus%20servicios%20contables"
-       target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      Escríbenos por WhatsApp ahora
+<section class="section section-alt" id="contacto">
+  <div class="cta-wrap reveal">
+    <div class="section-label" style="background:rgba(240,192,96,.15);color:#f0c060;border-color:rgba(240,192,96,.25)">✦ Contáctanos hoy</div>
+    <h2>¿Lista/o para ordenar<br>tu contabilidad?</h2>
+    <p>Una consulta gratuita puede ahorrarte mucho dinero y preocupaciones. Escríbenos ahora y te respondemos en minutos.</p>
+    <a class="btn-wa" style="margin:0 auto;font-size:1rem;padding:17px 36px;" href="https://wa.me/51915299915?text=Hola!%20Vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20sobre%20sus%20servicios%20contables" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escríbenos por WhatsApp — es gratis
     </a>
-
-    <div class="cta-info">
-      <div class="cta-info-item">
-        <span>📱</span>
-        <strong style="color:#fff;">915 299 915</strong>
-        <small>WhatsApp directo</small>
-      </div>
-      <div class="cta-info-item">
-        <span>📍</span>
-        <strong style="color:#fff;">Lima, Perú</strong>
-        <small>Atención presencial y remota</small>
-      </div>
-      <div class="cta-info-item">
-        <span>🕐</span>
-        <strong style="color:#fff;">Lun – Sáb</strong>
-        <small>9:00 am – 6:00 pm</small>
-      </div>
+    <div class="cta-info-row">
+      <div class="ci"><span class="ci-icon">📱</span><strong>915 299 915</strong>WhatsApp directo</div>
+      <div class="ci"><span class="ci-icon">📍</span><strong>Lima, Perú</strong>Presencial y remoto</div>
+      <div class="ci"><span class="ci-icon">🕐</span><strong>Lun – Sáb</strong>9:00 am – 6:00 pm</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p><strong>Kavaldi Soluciones S.A.C.</strong> — Estudio Contable &amp; Asesoría Tributaria</p>
-    <p>Lima, Perú &nbsp;·&nbsp; <a href="tel:+51915299915">+51 915 299 915</a> &nbsp;·&nbsp; <a href="https://kavaldisoluciones.com">kavaldisoluciones.com</a></p>
-    <p style="margin-top:10px;font-size:.75rem;">© 2024 Kavaldi Soluciones S.A.C. Todos los derechos reservados.</p>
-  </footer>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <strong>Kavaldi Soluciones S.A.C.</strong>
+      <p>Estudio Contable y Asesoría Tributaria especializada para micro y mediana empresa en Lima, Perú. Más de 20 años de experiencia a tu servicio.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <a href="#servicios">Contabilidad General</a>
+      <a href="#servicios">Asesoría Tributaria</a>
+      <a href="#servicios">Constitución de Empresas</a>
+      <a href="#servicios">Planilla de Sueldos</a>
+      <a href="#servicios">Regularización Tributaria</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <a href="tel:+51915299915">+51 915 299 915</a>
+      <a href="https://wa.me/51915299915" target="_blank">WhatsApp directo</a>
+      <a href="https://www.facebook.com/kavaldicontadores" target="_blank">Facebook</a>
+      <a href="https://kavaldisoluciones.com">kavaldisoluciones.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Kavaldi Soluciones S.A.C. · Lima, Perú · Todos los derechos reservados.</p>
+    <a class="footer-wa" href="https://wa.me/51915299915" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      915 299 915
+    </a>
+  </div>
+</footer>
 
-  <!-- ===== WHATSAPP FLOTANTE ===== -->
-  <a class="wa-float"
-     href="https://wa.me/51915299915?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20contable"
-     target="_blank" rel="noopener"
-     title="Chatea con nosotros por WhatsApp">
-    <div class="wa-float-pulse"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+<a class="wa-float" href="https://wa.me/51915299915?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20contable" target="_blank" rel="noopener">
+  <div class="wa-pulse"></div>
+  <div class="wa-tooltip">¡Escríbenos! 👋</div>
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
+<script>
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') }), {threshold:.12});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+  window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20));
+</script>
 </body>
 </html>
